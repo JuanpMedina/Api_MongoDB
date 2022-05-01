@@ -1,0 +1,23 @@
+{
+  "name": "api_universidad",
+  "version": "1.0.0",
+  "description": "-Analizar y compreder la estructura de un API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanpMedina/Api_MongoDB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanpMedina/Api_MongoDB/issues"
+  },
+  "homepage": "https://github.com/JuanpMedina/Api_MongoDB#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "node": "^17.7.2"
+  }
+}
