@@ -1,4 +1,4 @@
-const Carrera = require('../models/carreras.models');
+const carreraModels = require('../models/carreras.models');
 
 
 /**
@@ -12,7 +12,7 @@ const Carrera = require('../models/carreras.models');
         respuesta.ok = true;
         respuesta.message = "Carrera creada correctamente";
         const { codigo, nombre, descripcion } = req.body;
-        const carrera = new Carrera({ codigo, nombre, descripcion });
+        const carrera = new carreraModels({ codigo, nombre, descripcion });
         resultado = await carrera.save();
         console.log(resultado);
         respuesta.info = resultado;
@@ -37,7 +37,7 @@ const consultarCarreras = async (req, res) => {
     try {
         respuesta.ok = true;
         respuesta.message = "Carreras consultadas correctamente";
-        const resultado = await Carrera.find({ activo: true });
+        const resultado = await carreraModels.find({ activo: true });
         console.log(resultado);
         respuesta.info = resultado;
         res.send(respuesta);
@@ -60,7 +60,7 @@ const consultarCarrera = async (req, res) => {
     try {
         respuesta.ok = true;
         respuesta.message = "Carrera consultada exitosamente";
-        const resultado = await Carrera.findOne({ _id: req.params.id });
+        const resultado = await carreraModels.findOne({ _id: req.params.id });
         console.log(resultado);
         respuesta.info = resultado;
         res.send(respuesta);
@@ -84,7 +84,7 @@ const actualizarCarrera = async (req, res) => {
     try {
         respuesta.ok = true;
         respuesta.message = "Carrera actualizada correctamente";
-        const resultado = await Carrera.findOneAndUpdate(req.params.id, { nombre, descripcion });
+        const resultado = await carreraModels.findOneAndUpdate(req.params.id, { nombre, descripcion });
         console.log(resultado);
         respuesta.info = resultado;
         res.send(respuesta);
@@ -106,7 +106,7 @@ const eliminarCarrera = async (req, res) => {
     try {
         respuesta.ok = true;
         respuesta.message = "Carrera eliminada correctamente";
-        const resultado = await Carrera.findOneAndUpdate(req.params.id, { activo: false });
+        const resultado = await carreraModels.findOneAndUpdate(req.params.id, { activo: false });
         console.log(resultado);
         respuesta.info = resultado;
         res.send(respuesta);
