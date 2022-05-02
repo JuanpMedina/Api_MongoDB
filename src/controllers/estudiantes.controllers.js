@@ -105,11 +105,11 @@ const consultarEstudiante = async (req, res) => {
 
 
 /**
- * Método para eliminar una carrera
+ * Método para eliminar un estudiante
  * @param {*} req 
  * @param {*} res 
  */
- const eliminarCarrera = async (req, res) => {
+ const eliminarEstudiante = async (req, res) => {
     let respuesta = {}
     try {
         respuesta.ok = true;
@@ -125,3 +125,5 @@ const consultarEstudiante = async (req, res) => {
         res.status(500).send(respuesta);
     }
 }
+
+module.exports = {crearEstudiante,consultarEstudiante, consultarEstudiantes, actualizarEstudiante,eliminarEstudiante}
