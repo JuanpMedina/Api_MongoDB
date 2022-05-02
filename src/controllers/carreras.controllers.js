@@ -1,4 +1,4 @@
-const carreraModels = require('../models/carreras.models')
+const carreraModels = require('../models/carrera.models')
 
 /**
  * Método para crear carrera

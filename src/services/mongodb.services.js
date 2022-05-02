@@ -1,10 +1,16 @@
 const mongoose = require("mongoose");
-require('../../config/index.config')
+const config = require('../../config/index.config');
 
-const ConctarDB = process.env.URI_MONGODB +'/'+ process.env.MONGODB;
+const uri = config.configurations.MONGO_URI;
 
-mongoose.connect(ConctarDB, {
-      useUnifiedTopology: true,
-      useNewUrlParser: true
-}).then(db => console.log("Conectado correctamente ha la base de datos"))
-  .catch(err => console.error(err)) 
+(async () => {
+    try {
+      const db = await mongoose.connect(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      });
+      console.log("Mongodb is connected");
+    } catch (error) {
+      console.error(error);
+    }
+  })();

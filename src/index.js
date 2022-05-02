@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json())
 
 // Integrando el router con la app
-const router = require("./routers/index.router")
+const router = require("./routers/index.routers")
 app.use(router)
 
 

@@ -4,6 +4,8 @@
   "description": "-Analizar y compreder la estructura de un API.",
   "main": "index.js",
   "scripts": {
+    "dev":"nodemon src/index",
+    "start":"node src/index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +20,9 @@
   "homepage": "https://github.com/JuanpMedina/Api_MongoDB#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "node": "^17.7.2"
+    "node": "^17.7.2",
+    "mongodb": "^4.4.1", 
+    "mongoose": "^6.3.0",
+    "nodemon":"^2.0.15"
   }
 }

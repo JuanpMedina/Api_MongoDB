@@ -1,5 +1,5 @@
 const estudianteModels = require('../models/estudiante.models') 
-const {consultarCarrera} = require('./carreras.controlles')
+const {consultarCarrera} = require('./carreras.controllers')
 
 /**
  * Método para crear estudiante
