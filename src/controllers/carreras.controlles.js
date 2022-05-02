@@ -1,5 +1,4 @@
-const carreraModels = require('../models/carreras.models');
-
+const carreraModels = require('../models/carreras.models')
 
 /**
  * Método para crear carrera
@@ -59,8 +58,8 @@ const consultarCarrera = async (req, res) => {
     let respuesta = {}
     try {
         respuesta.ok = true;
-        respuesta.message = "Carrera consultada exitosamente";
-        const resultado = await carreraModels.findOne({ _id: req.params.id });
+        respuesta.message = "Carrera consultada correctamente";
+        const resultado = await carreraModels.findOne({ carrera: req.body.carrera });
         console.log(resultado);
         respuesta.info = resultado;
         res.send(respuesta);
@@ -84,7 +83,7 @@ const actualizarCarrera = async (req, res) => {
     try {
         respuesta.ok = true;
         respuesta.message = "Carrera actualizada correctamente";
-        const resultado = await carreraModels.findOneAndUpdate(req.params.id, { nombre, descripcion });
+        const resultado = await carreraModels.findOneAndUpdate({_Id:req.params.Id}, {nombre, descripcion});
         console.log(resultado);
         respuesta.info = resultado;
         res.send(respuesta);
@@ -106,7 +105,7 @@ const eliminarCarrera = async (req, res) => {
     try {
         respuesta.ok = true;
         respuesta.message = "Carrera eliminada correctamente";
-        const resultado = await carreraModels.findOneAndUpdate(req.params.id, { activo: false });
+        const resultado = await carreraModels.findByIdAndUpdate(req.params.id, { activo: false });
         console.log(resultado);
         respuesta.info = resultado;
         res.send(respuesta);
